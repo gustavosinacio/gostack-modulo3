@@ -7,11 +7,17 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
-
+      // Customize these -----------------------------------------------------------------------------------------------
       date: {
         allowNull: false,
         type: Sequelize.DATE,
       },
+      canceled_at: {
+        type: Sequelize.DATE,
+      },
+      // ---------------------------------------------------------------------------------------------------------------
+
+      // Foreign Keys --------------------------------------------------------------------------------------------------
       user_id: {
         type: Sequelize.INTEGER,
         references: { model: 'users', key: 'id' },
@@ -26,10 +32,7 @@ module.exports = {
         onDelete: 'SET NULL',
         allowNull: true,
       },
-
-      canceled_at: {
-        type: Sequelize.DATE,
-      },
+      // ---------------------------------------------------------------------------------------------------------------
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
