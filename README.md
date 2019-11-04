@@ -9,13 +9,13 @@ This API uses docker, docker redis:alpine, docker mongo
 ### REDIS
 
 
-
 ### MONGO
 
-
+mongodb://localhost:27017/gobarber
 
 ### POSTGRES
 
+### STEPS TO RUN
 
 * Fill .env file
 
@@ -29,6 +29,9 @@ This API uses docker, docker redis:alpine, docker mongo
 
     `docker run --name redisbarber -p 6379:6379 -d -t redis:alpine`
 
-* Run migrations: `npx sequelize-cli db:migrate`
 
 * Start mongo, postgres, redis
+  `docker start postgres mongobarber redisbarber`
+
+* Run migrations: `npx sequelize-cli db:migrate`
+
