@@ -11,7 +11,10 @@ class NotificationController {
     });
 
     if (!isProvider)
-      return res.status(401).json({ error: 'User is not a provider' });
+      return res.status(401).json({
+        error: 'User is not a provider',
+        userId: req.userId,
+      });
 
     const notifications = await Notification.find({
       user: req.userId,
