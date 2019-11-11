@@ -12,6 +12,10 @@ This API uses docker, docker redis:alpine, docker mongo
 
 ### POSTGRES
 
+to get inside the psql bash:
+
+`docker exec -it postgres psql -U postgres gobarber`
+
 ### STEPS TO RUN
 
 * Fill .env file
