@@ -23,7 +23,7 @@ class UserController {
     const userExists = await User.findOne({ where: { email: req.body.email } });
 
     if (userExists)
-      return res.status(400).json({ error: 'Email already in use' });
+      return res.status(400).json({ error: 'Email já cadastrado.' });
 
     const { id, name, email, provider } = await User.create(req.body);
 
@@ -47,6 +47,10 @@ class UserController {
     });
 
     const isValid = await schema.isValid(req.body);
+
+    console.log(isValid);
+    console.log(req.body);
+
     if (!isValid)
       return res.status(400).json({ error: 'Validation failed', isValid });
 
