@@ -38,7 +38,7 @@
     "sucrase": "^3.10.1"
   },
   "scripts": {
-    "dev": "nodemon src/server.js",
+    "dev": "./dockerstart.py && nodemon src/server.js",
     "queue": "nodemon src/queue.js"
   }
 }
