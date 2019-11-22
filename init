@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import os
 
 os.system('docker run --name postgres -p 5433:5432 -d -t postgres')
